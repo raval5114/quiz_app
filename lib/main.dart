@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/Controller/Auth/loginComponent.dart';
+import 'package:quiz_app/Model/auth.dart';
+import 'package:quiz_app/View/Auth/CreateAccount/namesAndDob.dart';
 import 'package:quiz_app/splashScreen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  authService.connect();
   runApp(const MyApp());
 }
 
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Splashscreen(),
+      home: const LoginComponent(),
     );
   }
 }

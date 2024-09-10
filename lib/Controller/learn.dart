@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/Controller/ExpanionTile/expansionTile.dart';
 
 class LearnComponent extends StatefulWidget {
   const LearnComponent({super.key});
@@ -10,8 +11,8 @@ class LearnComponent extends StatefulWidget {
 class _LearnComponentState extends State<LearnComponent> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Things to learn"),
+    return const Column(
+      children: [Text("data")],
     );
   }
 }
