@@ -14,11 +14,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  List _pages = <Widget>[
-    HomeScreen(),
-    LearnComponent(),
-    TestController(),
-    ProfileComponent()
+  final List _pages = <Widget>[
+    const HomeScreen(),
+    const LearnComponent(),
+    const TestController(),
+    const ProfileComponent()
   ];
   void _ontap(int index) {
     setState(() {
