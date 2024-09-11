@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/Controller/Auth/loginComponent.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/Model/auth.dart';
-import 'package:quiz_app/View/Auth/CreateAccount/namesAndDob.dart';
+import 'package:quiz_app/View/Auth/SignUp/loginPage.dart';
 import 'package:quiz_app/splashScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   authService.connect();
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LoginComponent(),
+      home: LoginPage(),
     );
   }
 }

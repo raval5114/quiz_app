@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         child: SizedBox(
           width: 520,
           child: Column(
-            children: [LoginComponent()],
+            children: [Text("The Quiz App"), LoginComponent()],
           ),
         ),
       ),

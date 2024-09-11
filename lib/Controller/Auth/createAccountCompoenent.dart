@@ -143,7 +143,7 @@ class _CreateAccountComponentState
             const SizedBox(height: 50),
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.blueAccent),
+                backgroundColor: WidgetStateProperty.all(Colors.purpleAccent),
               ),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {

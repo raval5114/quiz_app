@@ -9,7 +9,6 @@ class AuthService {
   final String dname;
   Db? _db;
   static const String collectionLoginName = "Users";
-  static const String collectionAccountsName = "Accounts";
 
   AuthService({required this.uri, required this.dname});
 
@@ -37,6 +36,31 @@ class AuthService {
     } catch (e) {
       debugPrint("Error finding user: $e");
       return null;
+    }
+  }
+
+  Future<bool> insertRecord(
+      Map<String, dynamic> record, String collectionRecordsName) async {
+    try {
+      final collection = await getCollection(collectionRecordsName);
+      await collection.insert(record);
+      debugPrint("Record inserted successfully: $record");
+      return true;
+    } catch (e) {
+      debugPrint("Error inserting record: $e");
+      return false;
+    }
+  }
+
+  Future<List<Map<String, dynamic>>> retrieveRecords(
+      String collectionName) async {
+    try {
+      final collection = await getCollection(collectionName);
+      final records = await collection.find().toList();
+      return records.map((record) => record).toList();
+    } catch (e) {
+      debugPrint("Error retrieving records: $e");
+      return [];
     }
   }
 
@@ -127,4 +151,4 @@ class AuthService {
   }
 }
 
-final authService = AuthService(uri: MONGO_URL, dname: 'Expensetracker');
+final authService = AuthService(uri: MONGO_URL, dname: 'QuizApp');

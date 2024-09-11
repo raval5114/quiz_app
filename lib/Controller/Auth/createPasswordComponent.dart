@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/Model/Provider/UserProvider.dart';
+import 'package:quiz_app/Model/auth.dart';
+import 'package:quiz_app/View/Auth/SignUp/loginPage.dart';
 import 'package:quiz_app/splashScreen.dart';
 
 class CreatepasswordComponent extends ConsumerStatefulWidget {
@@ -62,10 +64,16 @@ class _CreatepasswordComponentState
         ref
             .watch(userNotifier)
             .addPassword(_confirmPasswordController.text.toString());
+        authService.registerUser(
+            ref.watch(userNotifier).firstName,
+            ref.watch(userNotifier).lastName,
+            ref.watch(userNotifier).email,
+            ref.watch(userNotifier).dob,
+            ref.watch(userNotifier).password);
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Splashscreen(),
+              builder: (context) => const LoginPage(),
             ));
       }
     });
@@ -142,7 +150,7 @@ class _CreatepasswordComponentState
         ElevatedButton(
           onPressed: _validateAndSubmit, // Validate inputs on submit
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blueAccent, // Button color
+            backgroundColor: Colors.purpleAccent, // Button color
             padding: const EdgeInsets.symmetric(
                 horizontal: 30, vertical: 15), // Button padding
             shape: RoundedRectangleBorder(

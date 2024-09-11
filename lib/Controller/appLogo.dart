@@ -15,7 +15,7 @@ class _AppLogoState extends State<AppLogo> {
         child: Hero(
           tag: 'splash',
           child:
-              Image.asset('assets/images/appLogo.png', width: 240, height: 200),
+              Image.asset('assets/images/AppLogo.png', width: 240, height: 200),
         ));
   }
 }

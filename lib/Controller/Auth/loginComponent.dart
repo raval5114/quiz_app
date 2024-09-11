@@ -182,7 +182,8 @@ class _LoginComponentState extends State<LoginComponent> {
                 const SizedBox(height: 50),
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.blueAccent),
+                    backgroundColor:
+                        WidgetStateProperty.all(Colors.purpleAccent),
                   ),
                   onPressed: _isLoading
                       ? null
@@ -211,6 +212,7 @@ class _LoginComponentState extends State<LoginComponent> {
                       const Text("Don't have an Account?"),
                       InkWell(
                         onTap: () {
+                          //  authService.fin
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -220,7 +222,7 @@ class _LoginComponentState extends State<LoginComponent> {
                         },
                         child: const Text(
                           " Sign up",
-                          style: TextStyle(color: Colors.blueAccent),
+                          style: TextStyle(color: Colors.purpleAccent),
                         ),
                       )
                     ],
